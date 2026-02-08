@@ -10,7 +10,6 @@ import { OutboundLink } from "src/components/OutboundLink";
 import { VideoContainer } from "src/components/Video";
 import classnames from "classnames";
 import { SocialShareButtons } from "src/components/SocialShareButtons";
-import { NewsletterSignup } from "src/components/NewsletterSignup";
 
 type Author = {
   name: string;
@@ -94,9 +93,13 @@ export const Homepage = () => {
           </div>
           <div className="hero is-fullheight is-flex is-flex-direction-column is-justify-content-flex-end">
             <div className="landing-content mx-5">
-              <h1 className="headline mb-0">Title goes here...</h1>
+              <h1 className="headline mb-0">
+                Where The Sidewalk Ends, A Plaza Grows in Brooklyn
+              </h1>
               <div className="deck mt-1 mb-0">
-                And a subtitle could go here...
+                A small nonprofit is working to establish the first pedestrian
+                plaza in South Brooklyn. As they build community support, the
+                project faces challenges.
               </div>
               <div className="attribution mt-0">
                 <p className="byline mt-1">
@@ -119,8 +122,6 @@ export const Homepage = () => {
             </div>
           </div>
         </div>
-        <NewsletterSignup />
-
         {slides.map((slide, i) => {
           const { slideContent, photoFileName, photoPosition } = slide;
 
@@ -169,6 +170,7 @@ export const Homepage = () => {
                 "is-flex-direction-column",
                 "is-justify-content-space-between",
                 "is-align-items-center",
+                photoFileName === "E3_3.JPG" && "is-darkened",
                 splitParagraphs(slideContent).length > 1 && "is-doubled"
               )}
               style={{
