@@ -1,9 +1,5 @@
 name: Deploy to GitHub Pages
 
-concurrency:
-  group: deploy-stage-${{ github.ref }}
-  cancel-in-progress: true
-
 on:
   workflow_dispatch:
   push:
